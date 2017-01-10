@@ -1,0 +1,44 @@
+- bug: KillScreenSaver is off now, cause problem
+- bug: on Win7 contack book had other cy size, but spy++ shows the same, why ??
+- Test with IE 8.0
+- Lenapc, Win7 - problem
+- v3 & v2 services - possible problem if connected to other routers
+
+- Антон 916-221-0729 по поводу форекса позвонить
+
+
+
+
+ _________________________________ v3.0 Free vs Premium vs Corporate
+
+ - maximum connected operators = 1 vs 16
+ - 15h per 30 days limit
+
+ _________________________________ will be in v3.1 ___________________________
+
+ - add on VrOptions: traffic & session time
+ - bugfix: delay on Audio Chat
+ - View only for FileSystem
+ - GUI password for private router
+ - local connect on disconnected computer, and press close while connecting - too long wait
+
+
+
+
+FEATURES:
+ - when connect to self, viewer sends aaKeyEventMsg all times. No way to fix it, like mirror effect.
+
+ - (little problem) when viewer goes to "dormant" (minimazed) state, 
+target continue to scan screen until changes was found and sent after 
+it'll wait aaScreenUpdateCommit which will be sent when viewer leave "dormant"
+
+
+BUGS:
+- multimonitors when one primary has height < than secondary, 
+and uncovered area shows black until we move there window and after 
+it shows garbage there. Solution: need to fill uncovered area black after capturing or moving or 
+don't use cover it in compare
+
+- now AA discands info about alpha-cannel on mouse pointer, tried on Win7
+
+- bug on Win7 in Evaluated mode when open Import or Export Contact Book, show message, I can't remove it

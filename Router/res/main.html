@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>AMMYY Router - Statistics</title>
+</head>
+<script>
+window.setInterval("getStat1()", 1000);
+</script>
+<body>
+
+	<table>
+	<tr>
+	<td width="300px">
+
+    <table id="tblStatistics" border="1px">
+    <tr><td>Total connections:</td><td align='right' width="100px">-</td></tr>
+    <tr><td>- target:</td>  <td align='right'>-</td></tr>
+	<tr><td>- viewer:</td>  <td align='right'>-</td></tr>
+	<tr><td>- control:</td> <td align='right'>-</td></tr>
+	<tr><td>- unknown:</td> <td align='right'>-</td></tr>
+	<tr><td>Sessions:</td>  <td align='right'>-</td></tr>
+	<tr><td>Max recv:</td>  <td align='right'>-</td></tr>
+	<tr><td>Max sent:</td>  <td align='right'>-</td></tr>
+	<tr><td>Bytes recv:</td><td align='right'>-</td></tr>
+	<tr><td>Bytes sent:</td><td align='right' nowrap>-</td></tr>
+	<tr><td>Speed recv:</td><td align='right' nowrap>-</td></tr>
+	<tr><td>Speed sent:</td><td align='right'>-</td></tr>
+    </table>
+
+	</td>
+	<td valign="top">
+
+	<table id="tbl3" border="1px">
+	<tr><td>Stat with control<br>connections</td><td>%s</td><td><input type="button" value="Change" onclick="getStat3(0);"/></td></tr>
+	<tr><td>TCP Nagle</td>                   <td>%s</td><td><input type="button" value="Change" onclick="getStat3(1);"/></td></tr>
+	<tr><td>Debug log</td>                   <td>%s</td><td><input type="button" value="Change" onclick="getStat3(2);"/></td></tr>
+	<tr><td>Listen ports</td><td>%s</td><td>&nbsp;</td></tr>
+	<tr><td>Listen ip</td><td>%s</td><td>&nbsp;</td></tr>
+	<tr><td>Build time</td><td>%s</td><td>&nbsp;</td></tr>
+	<tr><td>Started time (UTC)</td><td>%s</td><td>&nbsp;</td></tr>
+	<tr><td>Current time (UTC)</td><td>%s</td><td>&nbsp;</td></tr>
+	</table>
+
+	</td>
+	</tr>
+	</table>
+
+
+    <br>
+
+    <select id="ctlClient" style="width:400px">
+		<option value="0">&lt;ALL&gt;</option>
+    </select>
+    <input type="button" value="Refresh" onclick="getStat2();"/>
+
+    <br>
+    <br>
+    <table id="tblPerClient" border="1px">
+		<tr><th width="200px">&nbsp;</th><th width="100px">total</th><th width="100px">target</th><th width="100px">viewer</th></tr>
+		<tr><td>Bytes recv</td>	 <td align='right'></td><td align='right'></td><td align='right'></td></tr>
+		<tr><td>Recv Packets</td><td align='right'></td><td align='right'></td><td align='right'></td></tr>
+		<tr><td>Send Packets</td><td align='right'></td><td align='right'></td><td align='right'></td></tr>
+		<tr><td>Max Recv Packet Size</td><td align='right'></td><td align='right'></td><td align='right'></td></tr>
+		<tr><td>Max Send Packet Size</td><td align='right'></td><td align='right'></td><td align='right'></td></tr>
+		<tr><td>Max Queue Size</td>      <td align='right'></td><td align='right'></td><td align='right'></td></tr>
+		<tr><td>Queue Size</td>          <td align='right'></td><td align='right'></td><td align='right'></td></tr>
+    </table>
+
+
+<script language="javascript" type="text/javascript">
+
+function GetXmlHttpObject()
+{
+	var xmlHttp=null;
+	try
+	{
+		// Firefox, Opera 8.0+, Safari
+		xmlHttp=new XMLHttpRequest();
+	}
+	catch (e)
+	{
+		// Internet Explorer
+	try
+	{
+		xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+	}
+	catch (e)
+	{
+		xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	}
+	return xmlHttp;
+}
+
+function AddDigitGrouping(s1)
+{
+	var s2 = "";
+	
+	if (s1.constructor==String) {
+		var len = s1.length;
+		var i = 0;
+		var n = 0;
+		while(i<len) {
+			if (i>0) {
+				s2+=" ";
+				n=3;
+			}
+			else {
+				n=(len%%3);
+				if (n==0) n=3;
+			}
+			
+			s2+=s1.substr(i,n);
+			i+=n;
+		}
+	}
+	return s2;
+}
+
+
+function getStat2()
+{
+	var objClient = document.getElementById("ctlClient");
+
+	while (objClient.options.length > 1) objClient.remove(1);
+        
+	var xmlHttp=GetXmlHttpObject();
+	xmlHttp.onreadystatechange=function()
+    {
+		if(xmlHttp.readyState==4)
+		{
+			var s = xmlHttp.responseText;
+			var arrVals = s.split(";");
+			var n = arrVals.length;
+			for(var k=0; k<n;) {
+				var oElem = document.createElement ("OPTION");
+                oElem.text  = arrVals[k++];
+                oElem.value = arrVals[k++];
+                objClient.options.add(oElem);
+			}
+		}
+	}
+	xmlHttp.open("GET","/stat2.html{PASSWORD}",true);
+    xmlHttp.send(null);
+}
+
+function getStat1()
+{       
+	var objClient = document.getElementById("ctlClient");
+	var objStatistics = document.getElementById("tblStatistics");
+
+	var xmlHttp=GetXmlHttpObject();
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4)
+        {
+			var s = xmlHttp.responseText;
+            var arrVals = s.split(";");
+
+			var k=0;
+
+			if (arrVals[k++]=="1") { // need to delete from combo-box
+				if (objClient.selectedIndex > 0) {
+					objClient.remove(objClient.selectedIndex);
+					objClient.selectedIndex = 0;
+				}
+			}
+
+            for(var i=0;i<12;i++) {
+				objStatistics.rows[i].cells[1].innerHTML = AddDigitGrouping(arrVals[k++]);
+            }			
+                
+			for(var col=1;col<4;col++) {				
+            for(var row=1;row<8;row++) {
+				var val = arrVals[k++];
+					val = (val=="") ? "&nbsp;" : AddDigitGrouping(val);
+				document.getElementById("tblPerClient").rows[row].cells[col].innerHTML = val;
+            }
+			}
+		}
+	}		
+	var sUrl = "/stat1.html{PASSWORD}&id=" + objClient.options[objClient.selectedIndex].value;
+    xmlHttp.open("GET",sUrl,true);
+    xmlHttp.send(null);
+}
+
+function getStat3(nRow)
+{  		
+	var xmlHttp=GetXmlHttpObject();
+        xmlHttp.onreadystatechange=function()
+    {
+		if(xmlHttp.readyState==4)
+        {
+			var obj3 = document.getElementById("tbl3");
+            var s = xmlHttp.responseText;
+                
+			obj3.rows[nRow].cells[1].innerHTML = s;
+		}
+	}
+	var sUrl = "/stat3.html{PASSWORD}&row=" + nRow;
+    xmlHttp.open("GET",sUrl,true);
+    xmlHttp.send(null);
+}
+
+</script>
+
+</body>
+</html>

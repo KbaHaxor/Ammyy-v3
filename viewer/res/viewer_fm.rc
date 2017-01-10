@@ -1,0 +1,121 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource_fm.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TRANSMIT            BITMAP  DISCARDABLE     "transmit.bmp"
+IDB_REFRESH             BITMAP  DISCARDABLE     "refresh.bmp"
+IDB_NEWDIR              BITMAP  DISCARDABLE     "newdir.bmp"
+IDB_DELETE              BITMAP  DISCARDABLE     "delete.bmp"
+IDB_RENAME              BITMAP  DISCARDABLE     "rename.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NEWDIR_DLG DIALOG DISCARDABLE  0, 0, 168, 41
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Folder name"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_DIR_NAME,5,5,157,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDOK,18,23,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,23,50,14
+END
+
+IDD_CONFIRM_DLG DIALOG DISCARDABLE  0, 0, 219, 102
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "",IDC_BTN_CONTINUE,4,42,208,14
+    PUSHBUTTON      "Overwrite",IDC_BTN_OVERWRITE,4,62,62,14
+    PUSHBUTTON      "Skip",IDC_BTN_SKIP,77,62,62,14
+    PUSHBUTTON      "Cancel",IDCANCEL,150,62,62,14
+    PUSHBUTTON      "Overwrite all",IDC_BTN_OVERWRITE_ALL,4,82,62,14
+    PUSHBUTTON      "Skip all",IDC_BTN_SKIP_ALL,77,82,62,14
+    LTEXT           "",IDC_STRING,4,8,208,27
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CONFIRM_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 212
+        BOTTOMMARGIN, 96
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

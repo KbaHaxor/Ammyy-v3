@@ -1,0 +1,737 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "Ammyy"
+    BEGIN
+        MENUITEM "Settings",                    ID_MENU_SETTINGS
+        MENUITEM "Contact Book",                ID_MENU_CONTACTBOOK
+        POPUP "Service"
+        BEGIN
+            MENUITEM "Install",                     ID_SERVICE_INSTALL
+            MENUITEM "Start",                       ID_SERVICE_START
+            MENUITEM "Stop",                        ID_SERVICE_STOP
+            MENUITEM "Remove",                      ID_SERVICE_REMOVE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_MENU_EXIT
+    END
+    POPUP "Language"
+    BEGIN
+        MENUITEM "English",                     ID_LANGUAGE_ENGLISH
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "Ammyy Admin website",         ID_HELP_AMMYY_WEBSITE
+        MENUITEM SEPARATOR
+        MENUITEM "About",                       ID_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PERMISSION_LIST DIALOG DISCARDABLE  0, 0, 366, 214
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "-"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_PC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,7,235,162
+    PUSHBUTTON      "",IDC_ADD,7,175,61,14
+    DEFPUSHBUTTON   "",IDC_EDIT,77,175,61,14
+    PUSHBUTTON      "",IDC_REMOVE,146,175,61,14
+    PUSHBUTTON      "OK",IDOK,309,192,50,14
+    CONTROL         "-",IDC_PROTECT_SETTINGS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,196,233,10
+END
+
+IDD_ADD_COMPUTER DIALOG DISCARDABLE  0, 0, 193, 182
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Folder",IDC_FOLDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,45,6,140,10
+    EDITTEXT        IDC_COMPUTER_ALIAS,45,23,140,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_COMPUTER_ID,45,43,140,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DESCRIPTION,12,88,173,53,ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,71,149,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,137,149,50,14
+    RTEXT           "ID/ IP:",IDC_LABEL_ID,9,43,27,14,SS_CENTERIMAGE
+    RTEXT           "Name:",IDC_STATIC,9,23,27,14,SS_CENTERIMAGE
+    LTEXT           "Description:",IDC_STATIC,12,76,106,8
+END
+
+IDD_SETTINGS_COMMON DIALOG DISCARDABLE  0, 0, 293, 148
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Audio playback device:",IDC_STATIC,5,15,75,12,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_AUDIO_PLAY,93,14,192,73,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Audio recording device:",IDC_STATIC,5,34,81,12,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_AUDIO_RECD,93,33,192,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "-",IDC_DEBUG_LOG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    6,72,279,10
+    CONTROL         "-",IDC_RUN_SYSTEM_VISTA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,90,279,10
+    CONTROL         "-",IDC_ACCESS_FILES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,108,279,10
+    EDITTEXT        IDC_FILES_FOLDER,6,127,279,14,ES_READONLY | NOT 
+                    WS_TABSTOP
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Ammyy Admin"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Date",IDC_BUILD_TIME,35,33,175,8
+    CTEXT           "Ammyy ...",IDC_AMMYY_VERSION,35,7,175,20,SS_NOPREFIX | 
+                    SS_CENTERIMAGE
+    DEFPUSHBUTTON   "OK",IDOK,160,82,50,14,WS_GROUP
+    LTEXT           "Copyright (C) 2006-2011",IDC_STATIC_COPYRIGHT,6,82,148,
+                    14,SS_CENTERIMAGE
+    LTEXT           "http://www.ammyy.com/",IDC_LINK,6,68,127,10,SS_NOTIFY
+    LTEXT           "",IDC_LINK_CUSTOM,6,55,204,10,SS_NOTIFY
+END
+
+IDD_OPERATOR_PERMISSION DIALOG DISCARDABLE  0, 0, 228, 118
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,114,96,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,171,96,50,14
+    RTEXT           "Computer ID:",IDC_STATIC,9,7,75,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_COMPUTER_ID,95,7,79,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD1,95,44,104,14,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD2,95,63,103,14,ES_PASSWORD | ES_AUTOHSCROLL
+    RTEXT           "Password:",IDC_STATIC,21,44,64,14,SS_CENTERIMAGE
+    RTEXT           "Confirm password:",IDC_STATIC,17,63,68,14,
+                    SS_CENTERIMAGE
+    GROUPBOX        "Leave password empty if no password authentication required",
+                    IDC_STATIC,3,31,220,54
+END
+
+IDD_CONTACT_BOOK DIALOG DISCARDABLE  0, 0, 328, 214
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,32,314,157
+    PUSHBUTTON      "",IDC_CONNECT,7,193,314,14
+END
+
+IDD_HTTP_PROXY DIALOG DISCARDABLE  0, 0, 233, 206
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Proxy Settings"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Use HTTPs Proxy",IDC_USE_PROXY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,7,123,10
+    LTEXT           "Address:",IDC_STATIC,13,27,35,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_ADDRESS,53,27,91,14,ES_AUTOHSCROLL
+    RTEXT           "Port:",IDC_STATIC,152,27,20,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_PORT,179,27,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "Leave user name and password empty if no proxy authentication",
+                    IDC_STATIC,7,52,219,56
+    LTEXT           "User name:",IDC_STATIC,13,68,42,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_USERNAME,56,68,163,14,ES_AUTOHSCROLL
+    LTEXT           "Password:",IDC_STATIC,13,86,42,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_PASSWORD,56,87,163,14,ES_PASSWORD | ES_AUTOHSCROLL
+    GROUPBOX        "IE proxy settings",IDC_STATIC,7,116,219,56
+    PUSHBUTTON      "Set IE proxy settings",IDC_SET_IE_PROXY,13,130,207,14
+    LTEXT           "Address:",IDC_STATIC,13,152,35,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_IE_ADDRESS,53,152,91,14,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Port:",IDC_STATIC,152,152,20,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_IE_PORT,179,152,40,14,ES_AUTOHSCROLL | ES_READONLY
+    DEFPUSHBUTTON   "OK",IDOK,115,185,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,176,185,50,14
+END
+
+IDD_RDP_SETTINGS DIALOG DISCARDABLE  0, 0, 229, 241
+STYLE DS_MODALFRAME | DS_CENTER | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ammyy Admin - RDP Settings"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Remote Desktop",IDC_STATIC,7,7,215,88
+    LTEXT           "&Size:",IDC_STATIC,18,18,29,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_WIDTH,49,38,50,65,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CTEXT           "x",IDC_STATIC,101,39,9,8
+    COMBOBOX        IDC_HEIGHT,113,38,50,64,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "pixels",IDC_STATIC,172,39,29,8
+    LTEXT           "&Colors:",IDC_STATIC,18,58,29,8
+    COMBOBOX        IDC_BPP,49,57,133,80,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Note: Settings on the remote computer might override this settings.",
+                    IDC_STATIC,49,73,137,19
+    GROUPBOX        "Remote S&ound",IDC_STATIC,7,99,215,31
+    COMBOBOX        IDC_SOUND_MODE,49,111,133,45,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Performance",IDC_STATIC,7,134,215,76
+    CONTROL         "Disable desktop &background",IDC_DISABLE_WALLPAPER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,147,194,10
+    CONTROL         "Disable &themes",IDC_DISABLE_THEMES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,18,163,194,10
+    CONTROL         "Disable &menu and window animations",
+                    IDC_DISABLE_MENU_ANIM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,179,194,10
+    CONTROL         "Do not show &window contents while dragging",
+                    IDC_DISABLE_FULL_WND_DRAG,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,195,194,10
+    DEFPUSHBUTTON   "OK",IDOK,100,220,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,172,220,50,14
+    COMBOBOX        IDC_SCREEN_MODE,48,18,133,74,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SETTINGS_NETWORK DIALOG DISCARDABLE  0, 0, 277, 207
+STYLE WS_POPUP
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Routers",IDC_ROUTER_STATIC,7,38,164,99
+    COMBOBOX        IDC_ROUTER_TYPE,19,52,141,70,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_ROUTER_TEXT,19,70,141,57,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_VSCROLL
+    PUSHBUTTON      "HTTPs Proxy",IDC_HTTP_PROXY,181,41,89,14
+    CONTROL         "Use Ammyy Woldwide Network",IDC_USE_WAN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,15,163,10
+    CONTROL         "Allow incoming connections by IP",IDC_INCOMING_LAN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,19,158,119,10
+    LTEXT           "TCP port:",IDC_PORT_STATIC,19,174,61,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_PORT,90,175,49,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    PUSHBUTTON      "External TCP ports",IDC_EXTERNAL_TCP_PORTS,181,121,89,
+                    14
+    CONTROL         "Allow Direct TCP",IDC_DIRECT_TCP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,181,103,89,10
+END
+
+IDD_PASSWORD_INPUT DIALOG DISCARDABLE  0, 0, 250, 97
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ammyy Admin Authentication"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    EDITTEXT        IDC_PASSWORD,133,52,110,14,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Log On",IDOK,133,76,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,193,76,50,14
+    LTEXT           "1",IDC_STATIC1,56,7,187,16,SS_CENTERIMAGE
+    LTEXT           "Computer ID:",IDC_STATIC,76,30,49,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_COMPUTER_ID,133,30,110,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Password:",IDC_STATIC,76,52,44,14,SS_CENTERIMAGE
+END
+
+IDD_SETTINGS_OPERATOR DIALOG DISCARDABLE  0, 0, 268, 154
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "-",IDC_REQUEST_ROUTER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,10,251,10
+    CONTROL         "-",IDC_WARN_FULL_SCREEN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,30,250,10
+    CONTROL         "-",IDC_COPY_FILE_TIME,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,50,251,10
+    COMBOBOX        IDC_ENCRYPTION,80,70,180,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Encryption:",IDC_STATIC,11,70,56,8
+    PUSHBUTTON      "RDP Settings",IDC_RDP_SETTINGS,9,103,115,14
+    PUSHBUTTON      "Encoder profiiles",IDC_ENCODER_LIST,9,123,115,14
+END
+
+IDD_SETTINGS_CLIENT DIALOG DISCARDABLE  0, 0, 281, 137
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "-",IDC_START_CLIENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,12,266,10
+    CONTROL         "-",IDC_CAPTURE_HINTS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,28,266,10
+    CONTROL         "-",IDC_OFF_BACKGROUND,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,44,266,10
+    CONTROL         "-",IDC_OFF_VISUAL_EFFECTS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,60,266,10
+    CONTROL         "-",IDC_OFF_COMPOSITION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,76,266,10
+    PUSHBUTTON      "-",IDC_PERMISSIONS,7,100,115,14
+END
+
+IDD_EXTERNAL_PORTS DIALOG DISCARDABLE  0, 0, 255, 238
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "External TCP ports"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Close",IDCANCEL,198,138,50,14
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,29,241,101
+    PUSHBUTTON      "Check",IDC_CHECK,63,138,50,14
+    PUSHBUTTON      "Remove",IDC_REMOVE,7,138,50,14
+    EDITTEXT        IDC_PORT,7,7,56,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Add TCP port",IDC_ADD,75,7,70,14
+    LTEXT           "",IDC_TEXT,7,160,241,71,SS_SUNKEN
+END
+
+IDD_SPEED_TEST DIALOG DISCARDABLE  0, 0, 290, 180
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ammyy Speed Test"
+FONT 9, "Courier New"
+BEGIN
+    PUSHBUTTON      "Close",IDCANCEL,233,159,50,14
+    PUSHBUTTON      "Start",IDC_START,176,159,50,14
+    EDITTEXT        IDC_TEXT,7,45,276,108,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    EDITTEXT        IDC_STATUS,7,7,276,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Time of each test (seconds)",IDC_STATIC1,75,24,208,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_TIME,7,24,59,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Clear",IDC_CLEAR,7,159,50,14
+END
+
+IDD_ENCODER DIALOG DISCARDABLE  0, 0, 156, 206
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "-"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Color quality:",IDC_STATIC,12,15,49,10,SS_CENTERIMAGE
+    COMBOBOX        IDC_COLOR_QUALITY,65,14,84,79,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Encoder:",IDC_STATIC_ENCODING,12,31,49,10,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_ENCODING,65,30,84,79,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "-",IDC_COMPRESSLEVEL_TEXT,12,50,109,10
+    RTEXT           "fast",IDC_STATIC_FAST,12,64,18,10
+    CONTROL         "Slider2",IDC_COMPRESSLEVEL,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,31,64,93,12
+    LTEXT           "best",IDC_STATIC_BEST,131,64,18,10
+    LTEXT           "-",IDC_JPEG_TEXT,12,90,109,10
+    RTEXT           "poor",IDC_STATIC_JPEG1,12,104,18,10
+    CONTROL         "Slider1",IDC_QUALITYLEVEL,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,31,102,93,12
+    LTEXT           "best",IDC_STATIC_JPEG2,131,104,18,10
+    DEFPUSHBUTTON   "OK",IDOK,41,185,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,185,50,14
+    LTEXT           "Description:",IDC_TEXT_DESCR,7,145,38,8
+    EDITTEXT        IDC_DESCRIPTION,7,158,142,14,ES_AUTOHSCROLL
+END
+
+IDD_ENCODER_LIST DIALOG DISCARDABLE  0, 0, 223, 161
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,107,140,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,166,140,50,14
+    LISTBOX         IDC_LIST,7,32,209,100,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Reset profiles",IDC_SET_DEFAULT,7,140,60,14
+END
+
+IDD_VR_OPTION1 DIALOGEX 0, 0, 306, 306
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "-"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Display",IDC_STATIC_DISPLAY,136,4,160,162
+    LTEXT           "Scale by:",IDC_STATIC_SCALE,145,15,36,10,SS_CENTERIMAGE
+    COMBOBOX        IDC_SCALE_EDIT,181,14,36,85,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "%",IDC_STATIC_P,222,15,10,10,SS_CENTERIMAGE
+    CONTROL         "Full-screen mode",IDC_FULLSCREEN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,145,29,145,10
+    CONTROL         "Auto-scroll for window mode",IDC_AUTO_SCROLL_WND_MODE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,145,42,145,10
+    LTEXT           "Remote mouse cursor:",IDC_STATIC,145,70,145,10
+    COMBOBOX        IDC_REMOTE_CURSOR,145,80,145,85,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Local mouse cursor:",IDC_STATIC,145,105,145,10
+    COMBOBOX        IDC_LOCAL_CURSOR,145,115,145,85,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Load",IDC_LOAD,180,144,50,14
+    PUSHBUTTON      "&Save",IDC_SAVE,240,144,50,14
+    GROUPBOX        "Connection information about remote host",IDC_STATIC,8,
+                    173,288,105
+    EDITTEXT        IDC_CONNECTION_INFO,16,184,271,85,ES_MULTILINE | 
+                    ES_READONLY | NOT WS_BORDER
+    PUSHBUTTON      "&OK",IDOK,191,286,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,246,286,50,14
+END
+
+IDD_TR_ACCEPT DIALOG DISCARDABLE  0, 0, 267, 167
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
+    WS_CAPTION
+CAPTION "Ammyy Admin"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Reject",IDREJECT,63,124,50,14
+    LTEXT           "",IDC_ACCEPT_CONN_TEXT,7,7,250,12
+    CONTROL         "-",IDC_VIEW_SCREEN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,37,25,172,10
+    CONTROL         "-",IDC_REMOTE_CONTROL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,52,40,156,10
+    CONTROL         "-",IDC_ENABLE_FS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    37,55,172,10
+    CONTROL         "-",IDC_AUDIO_CHAT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    37,70,172,10
+    CONTROL         "-",IDC_RDP_SESSION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,37,85,172,10
+    CONTROL         "-",IDC_REMEMBER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,
+                    143,250,14
+    PUSHBUTTON      "&Accept",IDACCEPT,7,124,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SETTINGS_NETWORK DLGINIT
+BEGIN
+    IDC_ROUTER_TYPE, 0x403, 1, 0
+"\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PERMISSION_LIST, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 210
+    END
+
+    IDD_ADD_COMPUTER, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_SETTINGS_COMMON, DIALOG
+    BEGIN
+        RIGHTMARGIN, 285
+        BOTTOMMARGIN, 141
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_OPERATOR_PERMISSION, DIALOG
+    BEGIN
+        RIGHTMARGIN, 227
+    END
+
+    IDD_CONTACT_BOOK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_HTTP_PROXY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_RDP_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_SETTINGS_NETWORK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_PASSWORD_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_SETTINGS_OPERATOR, DIALOG
+    BEGIN
+        RIGHTMARGIN, 260
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_SETTINGS_CLIENT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 273
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_EXTERNAL_PORTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 231
+    END
+
+    IDD_SPEED_TEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_ENCODER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_ENCODER_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_VR_OPTION1, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 300
+    END
+
+    IDD_TR_ACCEPT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 157
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      DISCARDABLE     "manifest.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\Ammyy_logo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// BINARY
+//
+
+IDR_CUSTOMIZE BINARY DISCARDABLE 
+BEGIN
+    "\000" 
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CONTACKBOOK_0       BITMAP  DISCARDABLE     "res\\contactbook_0.bmp"
+IDB_CONTACKBOOK_1       BITMAP  DISCARDABLE     "res\\contactbook_1.bmp"
+IDB_CONTACKBOOK_2       BITMAP  DISCARDABLE     "res\\contactbook_2.bmp"
+IDB_CONTACKBOOK_3       BITMAP  DISCARDABLE     "res\\contactbook_3.bmp"
+IDB_IMPORT              BITMAP  DISCARDABLE     "res\\import.bmp"
+IDB_EXPORT              BITMAP  DISCARDABLE     "res\\export.bmp"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Installer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\r\n"
+    "#include ""..\\viewer\\res\\Viewer.rc""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,0,0
+ PRODUCTVERSION 3,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Ammyy LLC\0"
+            VALUE "FileDescription", "Ammyy Admin\0"
+            VALUE "FileVersion", "3.0\0"
+            VALUE "InternalName", "Ammyy Admin\0"
+            VALUE "OriginalFilename", "AMMYY_Admin.exe\0"
+            VALUE "ProductName", "Ammyy Admin\0"
+            VALUE "ProductVersion", "3.0\0"
+        END
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Installer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+#include "..\viewer\res\Viewer.rc"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
